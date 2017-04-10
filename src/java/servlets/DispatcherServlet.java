@@ -88,6 +88,7 @@ public class DispatcherServlet extends HttpServlet {
         employee.setAge(p.getYears());
         employee.setDataofBirth(Date.from(birthday.atStartOfDay(ZoneId.systemDefault()).toInstant()));
         synchronized(this){
+         employee.setId(EMPLOYEE_ID_SEQUENCE);
         employeeList.put(EMPLOYEE_ID_SEQUENCE, employee);
         EMPLOYEE_ID_SEQUENCE++;
         }

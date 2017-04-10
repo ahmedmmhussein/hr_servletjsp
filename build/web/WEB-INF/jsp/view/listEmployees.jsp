@@ -3,16 +3,10 @@
     Created on : Apr 6, 2017, 11:08:47 AM
     Author     : ahussein
 --%>
-<%@page import="beans.Employee"%>
-<%@ page session="false" import="java.util.Map" contentType="text/html" pageEncoding="UTF-8" %>
-<%
-    @SuppressWarnings("unchecked")
-    Map<Integer, Employee> employeeList =
-            (Map<Integer, Employee>)request.getAttribute("employeeList");
-%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
-<style>
+     <style>
 table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
@@ -29,20 +23,21 @@ tr:nth-child(even) {
     background-color: #dddddd;
 }
 </style>
-</head>
+    <head>  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+         <link rel="stylesheet" href="css/style.css">
+        <title>Employees Page</title>
+    </head>
 
 <body>
  <h2>Employees List</h2>
   <a href="empservlet?action=create">Add new employee</a><br /><br />
         
         
-         <%
-            if(employeeList.size() == 0)
-            {
-                %><i>There are no employees in the system.</i><%
-            }
-            else
-            {%>
+<c:choose>
+<c:when test="${employeeList.size()==0}">
+<i>There are no employees in the system.</i>
+</c:when>
+<c:otherwise>
             <table align="center" cellpadding = "10">
 <tr>
     <th>ID</th>
@@ -53,29 +48,19 @@ tr:nth-child(even) {
     <th>Department</th>
     <th>Email</th>
 </tr>
-<%
-                for(int id : employeeList.keySet())
-                {
-                    String idString = Integer.toString(id);
-                    Employee employee = employeeList.get(id);
-                    String name=employee.getName();
-                    String jobTitle=employee.getJobTitle();
-                    int age=employee.getAge();
-                    long salary=employee.getSalary();
-                    String email=employee.getEmail();
-                    String dep=employee.getDepartment();%>
-                
-<tr>
-    <td><%= idString %></td>
-    <td><%= name %></td>
-    <td><%= age %></td>
-    <td><%= salary %></td>
-    <td><%= jobTitle %></td>
-    <td><%= dep %></td>
-    <td><%= email %></td>
+   <c:forEach items="${employeeList}" var="employee" >
+           <tr>
+    <td><c:out value="${employee.value.id}"/></td>
+    <td><c:out value="${employee.value.name}"/></td>
+    <td><c:out value="${employee.value.age}"/></td>
+    <td><c:out value="${employee.value.salary}"/></td>
+    <td><c:out value="${employee.value.jobTitle}"/></td>
+    <td><c:out value="${employee.value.department}"/></td>
+    <td><c:out value="${employee.value.email}"/></td>
   </tr>
-<% }
-}
-%>
+        </c:forEach>
+            </table>
+</c:otherwise>
+</c:choose>
 </body>
 </html>

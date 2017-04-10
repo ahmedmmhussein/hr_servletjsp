@@ -3,9 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/ahussein/Documents/NetBeansProjects/hrsystem_v1/web/index.html</file>
-            <file>file:/C:/Users/ahussein/Documents/NetBeansProjects/hrsystem_v1/web/WEB-INF/jsp/view/registerationForm.jsp</file>
+            <file>file:/C:/Users/ahussein/Documents/NetBeansProjects/hrsystem_v1/web/WEB-INF/jsp/view/registrationForm.jsp</file>
+            <file>file:/C:/Users/ahussein/Documents/NetBeansProjects/hrsystem_v1/web/META-INF/context.xml</file>
+            <file>file:/C:/Users/ahussein/Documents/NetBeansProjects/hrsystem_v1/web/WEB-INF/jsp/view/listEmployees.jsp</file>
             <file>file:/C:/Users/ahussein/Documents/NetBeansProjects/hrsystem_v1/web/WEB-INF/web.xml</file>
+            <file>file:/C:/Users/ahussein/Documents/NetBeansProjects/hrsystem_v1/web/WEB-INF/jsp/view/css/style.css</file>
             <file>file:/C:/Users/ahussein/Documents/NetBeansProjects/hrsystem_v1/src/java/beans/Employee.java</file>
             <file>file:/C:/Users/ahussein/Documents/NetBeansProjects/hrsystem_v1/src/java/servlets/DispatcherServlet.java</file>
         </group>
